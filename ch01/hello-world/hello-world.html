@@ -13,10 +13,9 @@
         <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
         <script>
             ReactDOM.render(
-                React.DOM.h1(
-                    {id: "my-heading"},
-					React.DOM.span(null, "Hello"),
-                    " World!"),
+                React.DOM.h1({
+					id: "my-heading"
+				}, "Hello, World!"),
                 document.getElementById("app")
             );
         </script>
