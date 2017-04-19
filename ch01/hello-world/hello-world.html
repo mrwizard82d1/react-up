@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hello React</title>
+	<meta charset="utf-8" >
+</head>	
+	<body>
+		<div id="app">
+			<!-- my app renders here -->
+		</div>
+        <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+        <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        <script>
+            ReactDOM.render(
+                React.DOM.h1(null, "Hello, World!"),
+                document.getElementById("app")
+            );
+        </script>
+	</body>
+</html>
