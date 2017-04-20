@@ -14,15 +14,31 @@
         <script>
             var Component = React.createClass({
                 propTypes: {
-                    name: React.PropTypes.string.isRequired
+                    firstName: React.PropTypes.string.isRequired,
+                    middleName: React.PropTypes.string,
+                    lastName: React.PropTypes.string.isRequired,
+                    address: React.PropTypes.string
                 },
+
+                getDefaultProps: function() {
+                    return {
+                        middleName: '',
+                        address: 'n/a'
+                    };
+                },
+
                 render: function() {
-                    return React.DOM.span(null, "My name is " + this.props.name);
+                    return React.DOM.div(null,
+                        React.DOM.div(null,
+                            React.DOM.span(null, "Name: " + this.props.firstName + " " + this.props.middleName + " " +
+                                this.props.lastName)),
+                        React.DOM.div(null, React.DOM.span(null, "Address: " + this.props.address)));
                 }
             });
             ReactDOM.render(
                 React.createElement(Component, {
-                    // name: "Bob"
+                    firstName: "Bob",
+                    lastName: "Johnson"
                 }),
                 document.getElementById("app")
             );
