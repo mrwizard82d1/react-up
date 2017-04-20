@@ -12,17 +12,19 @@
         <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
         <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
         <script>
-            var Component = React.createClass({
-                propTypes: {
-                    name: React.PropTypes.string.isRequired
-                },
-                render: function() {
-                    return React.DOM.span(null, "My name is " + this.props.name);
-                }
-            });
+            var Component = function() {
+                return {
+                    render: function() {
+                        return React.DOM.span(null, "My name is " + this.props.name);
+                    }
+                };
+            };
+            Component.propTypes = {
+                name: React.PropTypes.string.isRequired
+            };
             ReactDOM.render(
                 React.createElement(Component, {
-                    name: 123
+                    name: "Bob"
                 }),
                 document.getElementById("app")
             );
