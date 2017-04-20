@@ -13,13 +13,16 @@
         <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
         <script>
             var Component = React.createClass({
+                propTypes: {
+                    name: React.PropTypes.string.isRequired
+                },
                 render: function() {
                     return React.DOM.span(null, "My name is " + this.props.name);
                 }
             });
             ReactDOM.render(
                 React.createElement(Component, {
-                    name: "Bob"
+                    // name: "Bob"
                 }),
                 document.getElementById("app")
             );
