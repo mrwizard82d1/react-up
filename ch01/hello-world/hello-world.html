@@ -12,8 +12,13 @@
         <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
         <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
         <script>
+            var Component = React.createClass({
+                render: function() {
+                    return React.DOM.span(null, "I'm so custom!");
+                }
+            });
             ReactDOM.render(
-                React.DOM.h1(null, "Hello, World!"),
+                React.createElement(Component),
                 document.getElementById("app")
             );
         </script>
